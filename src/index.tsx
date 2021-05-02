@@ -126,4 +126,4 @@ const Watermark: React.FC<WatermarkProps> = ({
   );
 };
 
-export default React.memo(Watermark);
+export default Watermark;
