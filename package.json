@@ -1,12 +1,13 @@
 {
   "name": "react-awesome-watermark",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Watermark Component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/Pewww/react-awesome-watermark.git",
   "author": "pewww <jung22337@naver.com>",
   "license": "MIT",
+  "keywords": ["react-watermark-component", "watermark-security-defense"],
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx}\""
