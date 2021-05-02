@@ -18,10 +18,15 @@ const WATERMARK_DEFAULT_STYLE: React.CSSProperties = {
   pointerEvents: 'none'
 };
 
+const WATERMARK_DEFAULT_POSITION: WatermarkPosition = {
+  x: 50,
+  y: 50
+};
+
 interface WatermarkProps {
   text: string;
   style: WatermarkStyle;
-  position: WatermarkPosition;
+  position?: WatermarkPosition;
   multiple?: boolean;
   className?: string;
 }
@@ -29,7 +34,7 @@ interface WatermarkProps {
 const Watermark: React.FC<WatermarkProps> = ({
   text,
   style,
-  position,
+  position = WATERMARK_DEFAULT_POSITION,
   multiple,
   className = '',
   children

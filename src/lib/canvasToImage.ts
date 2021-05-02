@@ -35,7 +35,7 @@ const canvasToImage = ({
 
   if (multiple) {
     const textWidth = ctx.measureText(text).width;
-    const horizontalSpace = Math.floor(textWidth * 2);
+    const horizontalSpace = Math.floor(textWidth * 1.5);
     const verticalSpace = Math.floor(fontSize * 2.5);
 
     const centerX = Math.floor(width / 2);
