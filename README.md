@@ -14,9 +14,9 @@ yarn add react-awesome-watermark
 
 ## 🌌 Demo
 
-[See demo in codesandbox.io](https://codesandbox.io/s/busy-fog-8xvj0?file=/src/App.tsx)
+[**See demo in codesandbox.io**](https://codesandbox.io/s/busy-fog-8xvj0?file=/src/App.tsx)
 
-<img src="https://user-images.githubusercontent.com/23455736/116813265-fb501500-ab8d-11eb-8f0d-adfb499b2efa.png" width="650" style="border: 1px solid #ccc;">
+<img src="https://user-images.githubusercontent.com/23455736/116813265-fb501500-ab8d-11eb-8f0d-adfb499b2efa.png" width="600" style="border: 1px solid #ccc;">
 
 ## 👨‍🍳 Usage
 
@@ -33,14 +33,32 @@ interface WatermarkStyle {
   fontFamily?: string;
   opacity?: number;
   rotate?: number;
+  space?: number;
 }
 
+const defaultWatermarkStyle = {
+  color: '#000',
+  fontSize: 16,
+  fontFamily: 'sans-serif',
+  opacity = 0.13,
+  rotate = 25,
+  space = 0 // Custom text spacing
+};
+```
+
+```typescript
 // Interface for position props
+// It is only active when multiple option is not given.
 
 interface WatermarkPosition {
   x: number;
   y: number;
 }
+
+const defaultWatermarkPosition = {
+  x: 50
+  y: 50
+};
 ```
 
 ### Document
