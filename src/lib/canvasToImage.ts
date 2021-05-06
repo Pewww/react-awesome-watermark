@@ -23,7 +23,8 @@ const canvasToImage = ({
     fontSize = 16,
     fontFamily = 'sans-serif',
     opacity = 0.13,
-    rotate = 25
+    rotate = 25,
+    space = 0
   } = style;
 
   canvas.width = width;
@@ -35,8 +36,8 @@ const canvasToImage = ({
 
   if (multiple) {
     const textWidth = ctx.measureText(text).width;
-    const horizontalSpace = Math.floor(textWidth * 1.5);
-    const verticalSpace = Math.floor(fontSize * 2.5);
+    const horizontalSpace = space || Math.floor(textWidth * 1.5);
+    const verticalSpace = space || Math.floor(fontSize * 2.5);
 
     const centerX = Math.floor(width / 2);
     const centerY = Math.floor(height / 2);

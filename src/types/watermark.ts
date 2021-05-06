@@ -6,6 +6,7 @@ export interface WatermarkStyle {
   fontFamily?: string;
   opacity?: number;
   rotate?: number;
+  space?: number;
 }
 
 export interface WatermarkPosition {
