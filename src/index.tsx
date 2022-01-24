@@ -2,11 +2,13 @@ import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 
 import getRandomId from './lib/getRandomId';
 import canvasToImage from './lib/canvasToImage';
+import { $id } from './lib/dom';
 import SecurityDefense from './utils/SecurityDefense';
 import { WatermarkStyle, WatermarkPosition } from './types/watermark';
 
 const WATERMARK_WRAPPER_DEFAULT_STYLE: React.CSSProperties = {
-  position: 'relative'
+  position: 'relative',
+  'WebkitPrintColorAdjust': 'exact'
 };
 
 const WATERMARK_DEFAULT_STYLE: React.CSSProperties = {
@@ -76,8 +78,8 @@ const Watermark: React.FC<WatermarkProps> = ({
       watermarkId
     });
 
-    const watermarkWrapper = securityDefense.getDOM(watermarkWrapperId);
-    const watermark = securityDefense.getDOM(watermarkId);
+    const watermarkWrapper = $id(watermarkWrapperId);
+    const watermark = $id(watermarkId);
 
     if (watermarkWrapper && watermarkWrapperRef.current === null) {
       watermarkWrapperRef.current = securityDefense.getWatermarkWrapperObserver();

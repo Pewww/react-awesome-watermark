@@ -1,3 +1,5 @@
+import { $id } from '../lib/dom';
+
 interface SecurityDefenseProps {
   watermarkWrapperId: string;
   watermarkId: string;
@@ -12,12 +14,8 @@ export default class SecurityDefense {
     this.watermarkId = watermarkId;
   }
 
-  public getDOM(id: string) {
-    return document.getElementById(id);
-  }
-
   public getWatermarkWrapperObserver() {
-    const watermarkWrapper = this.getDOM(this.watermarkWrapperId);
+    const watermarkWrapper = $id(this.watermarkWrapperId);
 
     return new MutationObserver(mutations => {
       let removedWatermarkNode;
@@ -36,7 +34,7 @@ export default class SecurityDefense {
   }
 
   public getWatermarkObserver() {
-    const watermark = this.getDOM(this.watermarkId);
+    const watermark = $id(this.watermarkId);
     const attributes = watermark!.attributes;
     const initialAttributes = {} as Record<string, string>;
 
