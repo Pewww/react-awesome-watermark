@@ -142,7 +142,7 @@ export default function App() {
           You can drag this text
         </div>
       </StyledWatermark>
-      <H2>When you give "space" style props to Watermark</H2>
+      <H2>When you give "horizontalSpace" or "verticalSpace" style props to Watermark</H2>
       <H3>Before and After</H3>
       <WatermarkWrapper>
         <StyledWatermark
@@ -161,7 +161,8 @@ export default function App() {
           style={{
             width: 300,
             height: 300,
-            space: 50
+            horizontalSpace: 50,
+            verticalSpace: 50
           }}
           multiple
           className="space-props-test"
