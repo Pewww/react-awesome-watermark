@@ -4,11 +4,12 @@ import getRandomId from './lib/getRandomId';
 import canvasToImage from './lib/canvasToImage';
 import { $id } from './lib/dom';
 import SecurityDefense from './utils/SecurityDefense';
-import { WatermarkStyle, WatermarkPosition } from './types/watermark';
+import type { WatermarkStyle, WatermarkPosition } from './types/watermark';
+import type { ReactFCC } from './types/core';
 
 const WATERMARK_WRAPPER_DEFAULT_STYLE: React.CSSProperties = {
   position: 'relative',
-  'WebkitPrintColorAdjust': 'exact'
+  WebkitPrintColorAdjust: 'exact'
 };
 
 const WATERMARK_DEFAULT_STYLE: React.CSSProperties = {
@@ -33,7 +34,7 @@ interface WatermarkProps {
   className?: string;
 }
 
-const Watermark: React.FC<WatermarkProps> = ({
+const Watermark: ReactFCC<WatermarkProps> = ({
   text,
   style,
   position = WATERMARK_DEFAULT_POSITION,
@@ -102,7 +103,7 @@ const Watermark: React.FC<WatermarkProps> = ({
       watermarkWrapperRef.current?.disconnect();
       watermarkRef.current?.disconnect();
     };
-  }, [imageSrc]);
+  }, [imageSrc, watermarkId, watermarkWrapperId]);
 
   const { width, height } = style;
 
@@ -123,11 +124,8 @@ const Watermark: React.FC<WatermarkProps> = ({
     <div
       id={watermarkWrapperId}
       className={className}
-      style={watermarkWrapperStyle}
-    >
-      {imageSrc && (
-        <div id={watermarkId} style={watermarkStyle}/>
-      )}
+      style={watermarkWrapperStyle}>
+      {imageSrc && <div id={watermarkId} style={watermarkStyle} />}
       {children}
     </div>
   );
