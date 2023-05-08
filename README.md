@@ -31,7 +31,8 @@ interface WatermarkStyle {
   fontFamily?: string;
   opacity?: number;
   rotate?: number;
-  space?: number;
+  horizontalSpace?: number;
+  verticalSpace?: number;
 }
 
 const defaultWatermarkStyle = {
@@ -40,7 +41,8 @@ const defaultWatermarkStyle = {
   fontFamily: 'sans-serif',
   opacity = 0.13,
   rotate = 25,
-  space = 0 // Custom text spacing
+  horizontalSpace = 0, // Custom text spacing
+  verticalSpace = 0 // Custom text spacing 
 };
 ```
 
