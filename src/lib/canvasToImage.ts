@@ -52,7 +52,7 @@ const canvasToImage = ({
       for (
         let posY = 0;
         posY <= height + verticalSpace;
-        posY += horizontalSpace
+        posY += verticalSpace
       ) {
         ctx.fillText(text, posX, posY);
       }
